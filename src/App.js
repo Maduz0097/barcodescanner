@@ -5,7 +5,10 @@ import Barcode from 'react-jsbarcode';
 
 export default function App() {
   const [barcodeInputValue, updateBarcodeInputValue] = useState('product name')
-let valueArray = ["one","two","three"];
+let valueArray = [
+  "DCX-144114114",
+  "DCX-514114114",
+  "DCX-152314114"];
    let   onChangeBarcode = (event) => (
     event.target.value !== "" ?
    updateBarcodeInputValue(event.target.value)
@@ -15,9 +18,9 @@ let valueArray = ["one","two","three"];
   
    const options = [
     {value: '', text: '--Choose an option--'},
-    {value: {width:2,height:100}, text: '22mm * 10mm'},
-    {value:  {width:3,height:200}, text: '15mm * 10mm'},
-    {value:  {width:4,height:300}, text: '32mm * 10mm'},
+    {value: {width:1,height:50}, text: '22mm * 10mm'},
+    {value:  {width:1,height:60}, text: '15mm * 10mm'},
+    {value:  {width:2,height:50}, text: '32mm * 10mm'},
   ];
 
   const [selected, setSelected] = useState(options[0]);
@@ -52,13 +55,15 @@ let valueArray = ["one","two","three"];
                       className='SearchInput'
                      
                       required="true"
-                    />
+                    /> 
      </form>
      {/*Multiple barcodes with array map */}
      {
 valueArray.map((data) =>
 
-<Barcode value={data} options={{width:selected.value.width,height:selected.value.height}}  renderer="img"/> 
+<Barcode value={data} options={{
+  // text:"test",
+  width:selected.value.width,height:selected.value.height}}  renderer="img"/> 
 )
      }
      
