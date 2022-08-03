@@ -3,7 +3,7 @@ import ReactToPrint from 'react-to-print';
 
 import  PrintBarcode  from './PrintBarcode';
 
-const PrintGenerator = () => {
+const PrintGenerator = (props) => {
   const componentRef = useRef();
 
   return (
@@ -12,7 +12,7 @@ const PrintGenerator = () => {
         trigger={() => <button>Print Barcodes</button>}
         content={() => componentRef.current}
       />
-      <PrintBarcode ref={componentRef} />
+      <PrintBarcode data={props} ref={componentRef} />
     </div>
   );
 };
