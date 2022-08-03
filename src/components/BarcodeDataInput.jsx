@@ -1,6 +1,4 @@
 import {React, useState } from "react"
-import Barcode from 'react-jsbarcode';
-import PrintBarcode from "./PrintBarcode";
 import PrintGenerator from "./PrintGenerator";
 
 const BarcodeDataInput = () =>{
@@ -23,13 +21,6 @@ const BarcodeDataInput = () =>{
        updateBarcodeInputValue('null input')
        );
      
-      
-      
-      
-    
-      
-    
-    
       let handleChange = (event) =>(
         // console.log(event.target.value.width)
         setSelected(options[event.target.value])
