@@ -27,30 +27,32 @@ const BarcodeDataInput = () =>{
         
       );
       return(
-        <div>
+        <div >
         <h1>Label Printing</h1>
-        
-       <form>
+        <div className="dataInput">
+        <form>
        
-        <select value={selected} onChange={handleChange}>
-          {options.map((option,index) => (
-            <option key={index} value={index}>
-              {option.text}
-            </option>
-          ))}
-        </select>
-        
-        <input
-                        autoFocus={true}
-                        placeholder='Start Scanning'
-                        value={barcodeInputValue}
-                        onChange={onChangeBarcode}
-                        id='SearchbyScanning'
-                        className='SearchInput'
-                       
-                        required="true"
-                      /> 
-       </form>
+       <select value={selected} onChange={handleChange}>
+         {options.map((option,index) => (
+           <option key={index} value={index}>
+             {option.text}
+           </option>
+         ))}
+       </select>
+       
+       <input
+                       autoFocus={true}
+                       placeholder='Start Scanning'
+                       value={barcodeInputValue}
+                       onChange={onChangeBarcode}
+                       id='SearchbyScanning'
+                       className='SearchInput'
+                      
+                       required="true"
+                     /> 
+      </form>
+        </div>
+      
        <PrintGenerator data={barProps} />
       
   </div>
