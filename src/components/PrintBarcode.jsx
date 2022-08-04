@@ -24,9 +24,10 @@ const  PrintBarcode = forwardRef(
     console.log(initialState.data.data.selected.value.width)
     console.log(state.data)
     let valueArray = [
-      "DCX-144114114",
-      "DCX-514114114",
-      "DCX-152314114"];
+      {text:"prod_name",value:"DCX-144114114"},
+      {text:"prod_name",value:"DCX-144114115"},
+      {text:"prod_name",value:"DCX-144114116"},
+      {text:"prod_name",value:"DCX-144114117"}];
       
       return (
         <div className="App" ref={ref}>
@@ -35,15 +36,18 @@ const  PrintBarcode = forwardRef(
          {
     valueArray.map((data) =>
     
-    <Barcode value={data} options={{
-      // text:"test",
+    <Barcode value={data.value} options={{
+      text:data.text + ' - ' + data.value,
+      format:"CODE39",
+      textAlign:"center",
+      fontSize:15,
       width:state.data.data.selected.value.width,height:state.data.data.selected.value.height}}  renderer="img"/> 
     )
          }
          
      
     {/*single barcode with user input */}
-    <Barcode value={state.data.data.barcodeInputValue} options={{width:state.data.data.selected.value.width,height:state.data.data.selected.value.height}}  renderer="img"/> 
+    {/* <Barcode value={state.data.data.barcodeInputValue} options={{width:state.data.data.selected.value.width,height:state.data.data.selected.value.height,format:"EAN13"}}  renderer="img"/>  */}
       
       
         </div>

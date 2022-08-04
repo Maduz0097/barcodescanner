@@ -28,7 +28,7 @@ const BarcodeDataInput = () =>{
       );
       return(
         <div >
-        <h1>Label Printing</h1>
+        <h1>Barcode Label Printing</h1>
         <div className="dataInput">
         <form>
        
